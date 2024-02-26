@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Multi-step Register Form Challenge</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="any">
+</head>
+<body>
+
+    <main>
+        <div class="card">
+            <div class="container">
+                <form id="regForm" action="/" >
+                    <div class="tab" id="register"  >
+                        <h2 class="title">Register</h2>
+                        <legend>Name</legend>
+                        <p><input id="nameInput" type="text" placeholder="Enter your name" oninput="this.className" required minlength="3" maxlength="50"></p>
+                        <legend>Email</legend>
+                        <p><input id="email" type="text" placeholder="example@gmail.com" name="email" required oninput="this.className"></p>
+                        <button onclick="check1(event);" >Continue</button>
+                    </div>
+    
+                    <div class="tab" id="whichtopics" style="display: none;">
+                        <h2 class="title">Which topics you are interested in?</h2>
+                        <label for="softwareDev" class="opciones">
+                            <input class="radio" id="softwareDev" type="radio" name="opciones" value="Software Development" required>
+                            Software Development
+                        </label>
+                        <label for="userExp" class="opciones">
+                            <input id="userExp" type="radio" name="opciones" value="User Experience">
+                            User Experience
+                        </label>
+                        <label for="graphicDes" class="opciones">
+                            <input id="graphicDes" type="radio" name="opciones" value="Graphic Design">
+                            Graphic Design
+                        </label>
+                        <button onclick="check2(event); summary();" >Continue</button>
+                    </div>
+    
+                    <div class="tab" id="summary" style="display: none;">
+                        <!-- Show information of the previus steps-->
+                        <h2 class="title">Summary</h2>
+                        <div id="step-1-info">
+                            <div class="name">
+                                <h3 id="nameSummary">Name: </h3>
+                                <h3 id="nameData"></h3>
+                            </div>
+                            <div class="email">
+                                <h3 id="emailSummary">Email:</h3>
+                                <h3 id="emailData"></h3>
+                            </div>
+                                
+                            
+                        </div>
+                        <div id="step-2-info">
+                            <h3 id="topicsSummary">Topics:</h3>
+                            <ul id="topicChoice">
+                                <li id="topicChoiceSelected"></li>
+                            </ul>
+                        </div>
+                        <button onclick="popUp(event)">Confirm</button>
+                    </div>
+
+
+                </form>
+            </div>
+            
+            <div id="pop" class="popup" style="display: none;">
+                <img src="/multiStepRegisterForm/images/success.png" alt="check">
+                <h2>You have successfully completed the form!</h2>
+                <button id="popupButton" onclick="resetPage(event)">Close</button>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div class="steps" >
+                <p>Step 1 of 3</p>
+                <span class="step current"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+        </div>
+    </main>
+
+    <script src="/multiStepRegisterForm/js/script.js"></script>
+</body>
+</html>

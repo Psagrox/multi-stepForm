@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add some styles for body*/
+body {
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #020617;
+    color: #cbd5e1;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.5;
+    background-image: radial-gradient(#0f172a 1px,transparent 0),radial-gradient(#0f172a 1px,transparent 0) url(/multiStepRegisterForm/images/blur-radial.svg);
+    background-position: 0 0,25px 25px;
+    background-attachment: fixed;
+    background-size: 50px 50px;
+    overflow-x: hidden;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    column-gap: 1.5rem;
+}
+
+
+body::after {
+    content: "";
+    background: url('../images/blur-radial.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -30%; 
+    left: -30%; 
+    width: 70%; 
+    height: 70%; 
+    opacity: 0.9;
+    z-index: -1;
+}
+
+body::before {
+    content: "";
+    background: url('../images/blur-radial.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 60%; 
+    left: 60%; 
+    width: 70%; 
+    height: 70%; 
+    opacity: 0.8;
+    z-index: -1;
+}
+
+
+
+form {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 35rem;
+    height: 30rem;
+    display: flex;
+    background-color: #212936;
+    border-radius: 2.5%;
+    justify-content: center;
+    border: 0.2px solid #4D5562;
+    
+}
+
+.container h2 {
+    font-family: "Inter", sans-serif;
+    size: 250rem;
+    font-weight: 500;
+    color: #E5E7EB ;
+}
+
+.steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.step {
+    margin-left: 1rem;
+    margin-top: 0.2rem;
+    height: 15px;
+    width: 15px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.3;
+}
+
+.steps p{
+    margin-right: 1.5rem;
+    color: #4D5562;
+}
+
+.step.current {
+    background-color: #845EEE; /* Cambia el color del paso actual */
+    box-shadow: 0 0 15px rgba(132, 94, 238, 1), 0 0 25px rgba(132, 94, 238, 1), 0 0 35px rgba(132, 94, 238, 1); /* Agrega una sombra alrededor del círculo */
+    opacity: 1;
+}
+
+.step.prev {
+    background-color: #845EEE; /* Cambia el color del paso actual */
+    opacity: 1;
+}
+
+.tab {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tab .title  {
+    margin-bottom: 3rem;
+}
+
+.tab legend {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #A1A1A9;
+    margin-bottom: 0.6rem;
+}
+
+.tab  p {
+    margin-bottom: 2.5rem;
+}
+.tab  input {
+    background-color: transparent;
+    border: 3px solid #4D5562;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+    color: #4D5562;
+    height: 150%;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+}
+
+.tab button {
+    color: #E5E7EB;
+    background-image: linear-gradient(to bottom, #845EEE, #652CD1);
+    font-size: 1.25rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 25px;
+    width: 12rem;
+    margin-left: 30%;
+    margin-top: 2rem;
+}
+
+.opciones:hover {
+    background-color: #652CD1;
+    color: #E5E7EB;
+    border: 1px solid #A1A1A9;
+}
+
+
+.opciones label {
+    display: block;
+}
+
+.opciones {
+    display: inline-block;
+    background-color: #394150;
+    border: 1px solid #4D5562;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-right: 10px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    color: #A1A1A9;
+    position: relative;
+}
+
+.opciones input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 55rem;
+    height: 2rem;
+}
+
+.name {
+    display: flex;
+}
+.email {
+    display: flex;
+}
+
+#summary {
+    display: flex;
+    margin-top: 0;
+    height: 100%;
+    margin-bottom: 2.5rem;
+}
+
+#summary h2{
+    margin-bottom: 1.5rem;
+}
+#nameSummary {
+    color: #4D5562;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+#nameData {
+    font-size: 1.25rem;
+    color: #E5E7EB;
+}
+#emailSummary {
+    color: #4D5562;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+#emailData {
+    font-size: 1.25rem;
+    color: #E5E7EB;
+}
+
+#topicsSummary {
+    color: #4D5562;
+    margin-top: 2rem;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+#topicChoice  {
+    font-size: 1.25rem;
+    color: #E5E7EB;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+.popup {
+    width: 60rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #212936;
+    border-radius: 2.5%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 30, 30, 0.9);
+    z-index: 9999;
+}
+
+.popup img {
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 3rem;
+}
+
+.popup h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #E5E7EB ;
+    margin-bottom: 2rem;
+}
+
+.popup button {
+    color: #E5E7EB;
+    background-image: linear-gradient(to bottom, #845EEE, #652CD1);
+    font-size: 1.25rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 25px;
+    width: 12rem;
+    margin-bottom: 5rem;
+}
+
+
+@media screen and (min-width: 640px) {
+    body {
+        max-width: 640px;
+    }
+
+    main {
+        flex-direction: row;
+    }
+
+
+}
